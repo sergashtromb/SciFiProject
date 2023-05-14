@@ -1,14 +1,2327 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Test/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Test/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Test/ground_test.tscn" type="PackedScene" id=3]
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 36 )
-Gravity = 25.0
-Jump = 450.0
+position = Vector2( 48, 36 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
-tile_data = PoolIntArray( -262158, 1, 0, -262155, 1, 0, -262153, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327670, 1, 0, -327669, 1, 0, -327668, 1, 0, -327667, 1, 0, -327666, 1, 0, -327665, 1, 0, -12, 1, 0, -11, 1, 0, -10, 1, 0, -9, 1, 0, -8, 1, 0, -7, 1, 0, -6, 1, 0, 262126, 1, 0, 262127, 1, 0, 262128, 1, 0, 262129, 1, 0, 262130, 1, 0, 262131, 1, 0, 262132, 1, 0, 262133, 1, 0, 262134, 1, 0, 262135, 1, 0, 262136, 1, 0, 262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 1, 0, 196628, 1, 0, 196629, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 1, 0, 196633, 1, 0, 196634, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 196638, 1, 0, 196639, 1, 0, 196640, 1, 0, 196641, 1, 0, 196642, 1, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 196646, 1, 0, 196647, 1, 0, 196648, 1, 0, 196649, 1, 0, 196650, 1, 0, 196651, 1, 0, 196652, 1, 0, 196653, 1, 0, 196654, 1, 0 )
+tile_data = PoolIntArray( -458777, 1, 0, -393241, 1, 0, -327705, 1, 0, -262169, 1, 0, -262158, 1, 0, -262155, 1, 0, -262153, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327670, 1, 0, -327669, 1, 0, -327668, 1, 0, -327667, 1, 0, -327666, 1, 0, -327665, 1, 0, -196633, 1, 0, -262139, 1, 0, -131097, 1, 0, -196603, 1, 0, -65561, 1, 0, -131067, 1, 0, -25, 1, 0, -12, 1, 0, -11, 1, 0, -10, 1, 0, -9, 1, 0, -8, 1, 0, -7, 1, 0, -6, 1, 0, -65531, 1, 0, 65511, 1, 0, 131047, 1, 0, 196583, 1, 0, 131078, 0, 0, 131081, 2, 0, 262119, 1, 0, 262120, 1, 0, 262121, 1, 0, 262122, 1, 0, 262123, 1, 0, 262124, 1, 0, 262125, 1, 0, 262126, 1, 0, 262127, 1, 0, 262128, 1, 0, 262129, 1, 0, 262130, 1, 0, 262131, 1, 0, 262132, 1, 0, 262133, 1, 0, 262134, 1, 0, 262135, 1, 0, 262136, 1, 0, 262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 1, 0, 196628, 1, 0, 196629, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 1, 0, 196633, 1, 0, 196634, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 196638, 1, 0, 196639, 1, 0, 196640, 1, 0, 196641, 1, 0, 196642, 1, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 196646, 1, 0, 196647, 1, 0, 196648, 1, 0, 196649, 1, 0, 196650, 1, 0, 196651, 1, 0, 196652, 1, 0, 196653, 1, 0, 196654, 1, 0 )
+
+[node name="Gronded" type="Node2D" parent="."]
+light_mask = 2
+position = Vector2( 0, -68 )
+
+[node name="ground_test" parent="Gronded" instance=ExtResource( 3 )]
+
+[node name="ground_test2" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 0 )
+
+[node name="ground_test3" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, -2 )
+
+[node name="ground_test4" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, -2 )
+
+[node name="ground_test5" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 0 )
+
+[node name="ground_test6" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 0 )
+
+[node name="ground_test7" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, -2 )
+
+[node name="ground_test8" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, -2 )
+
+[node name="ground_test9" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, -5 )
+
+[node name="ground_test10" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, -5 )
+
+[node name="ground_test11" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, -7 )
+
+[node name="ground_test12" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, -7 )
+
+[node name="ground_test13" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, -5 )
+
+[node name="ground_test14" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, -5 )
+
+[node name="ground_test15" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, -7 )
+
+[node name="ground_test16" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, -7 )
+
+[node name="ground_test17" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 0 )
+
+[node name="ground_test18" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 0 )
+
+[node name="ground_test19" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, -2 )
+
+[node name="ground_test20" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, -2 )
+
+[node name="ground_test21" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 0 )
+
+[node name="ground_test22" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 0 )
+
+[node name="ground_test23" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, -2 )
+
+[node name="ground_test24" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, -2 )
+
+[node name="ground_test25" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, -5 )
+
+[node name="ground_test26" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, -5 )
+
+[node name="ground_test27" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, -7 )
+
+[node name="ground_test28" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, -7 )
+
+[node name="ground_test29" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, -5 )
+
+[node name="ground_test30" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, -5 )
+
+[node name="ground_test31" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, -7 )
+
+[node name="ground_test32" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, -7 )
+
+[node name="ground_test33" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 10 )
+
+[node name="ground_test34" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 10 )
+
+[node name="ground_test35" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 8 )
+
+[node name="ground_test36" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 8 )
+
+[node name="ground_test37" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 10 )
+
+[node name="ground_test38" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 10 )
+
+[node name="ground_test39" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 8 )
+
+[node name="ground_test40" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 8 )
+
+[node name="ground_test41" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 5 )
+
+[node name="ground_test42" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 5 )
+
+[node name="ground_test43" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 3 )
+
+[node name="ground_test44" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 3 )
+
+[node name="ground_test45" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 5 )
+
+[node name="ground_test46" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 5 )
+
+[node name="ground_test47" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 3 )
+
+[node name="ground_test48" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 3 )
+
+[node name="ground_test49" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 10 )
+
+[node name="ground_test50" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 10 )
+
+[node name="ground_test51" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 8 )
+
+[node name="ground_test52" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 8 )
+
+[node name="ground_test53" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 10 )
+
+[node name="ground_test54" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 10 )
+
+[node name="ground_test55" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 8 )
+
+[node name="ground_test56" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 8 )
+
+[node name="ground_test57" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 5 )
+
+[node name="ground_test58" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 5 )
+
+[node name="ground_test59" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 3 )
+
+[node name="ground_test60" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 3 )
+
+[node name="ground_test61" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 5 )
+
+[node name="ground_test62" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 5 )
+
+[node name="ground_test63" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 3 )
+
+[node name="ground_test64" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 3 )
+
+[node name="ground_test65" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 0 )
+
+[node name="ground_test66" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 0 )
+
+[node name="ground_test67" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, -2 )
+
+[node name="ground_test68" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, -2 )
+
+[node name="ground_test69" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 0 )
+
+[node name="ground_test70" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 0 )
+
+[node name="ground_test71" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, -2 )
+
+[node name="ground_test72" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, -2 )
+
+[node name="ground_test73" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, -5 )
+
+[node name="ground_test74" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, -5 )
+
+[node name="ground_test75" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, -7 )
+
+[node name="ground_test76" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, -7 )
+
+[node name="ground_test77" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, -5 )
+
+[node name="ground_test78" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, -5 )
+
+[node name="ground_test79" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, -7 )
+
+[node name="ground_test80" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, -7 )
+
+[node name="ground_test81" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 0 )
+
+[node name="ground_test82" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 0 )
+
+[node name="ground_test83" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, -2 )
+
+[node name="ground_test84" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, -2 )
+
+[node name="ground_test85" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 0 )
+
+[node name="ground_test86" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 0 )
+
+[node name="ground_test87" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, -2 )
+
+[node name="ground_test88" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, -2 )
+
+[node name="ground_test89" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, -5 )
+
+[node name="ground_test90" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, -5 )
+
+[node name="ground_test91" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, -7 )
+
+[node name="ground_test92" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, -7 )
+
+[node name="ground_test93" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, -5 )
+
+[node name="ground_test94" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, -5 )
+
+[node name="ground_test95" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, -7 )
+
+[node name="ground_test96" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, -7 )
+
+[node name="ground_test97" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 10 )
+
+[node name="ground_test98" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 10 )
+
+[node name="ground_test99" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 8 )
+
+[node name="ground_test100" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 8 )
+
+[node name="ground_test101" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 10 )
+
+[node name="ground_test102" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 10 )
+
+[node name="ground_test103" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 8 )
+
+[node name="ground_test104" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 8 )
+
+[node name="ground_test105" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 5 )
+
+[node name="ground_test106" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 5 )
+
+[node name="ground_test107" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 3 )
+
+[node name="ground_test108" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 3 )
+
+[node name="ground_test109" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 5 )
+
+[node name="ground_test110" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 5 )
+
+[node name="ground_test111" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 3 )
+
+[node name="ground_test112" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 3 )
+
+[node name="ground_test113" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 10 )
+
+[node name="ground_test114" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 10 )
+
+[node name="ground_test115" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 8 )
+
+[node name="ground_test116" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 8 )
+
+[node name="ground_test117" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 10 )
+
+[node name="ground_test118" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 10 )
+
+[node name="ground_test119" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 8 )
+
+[node name="ground_test120" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 8 )
+
+[node name="ground_test121" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 5 )
+
+[node name="ground_test122" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 5 )
+
+[node name="ground_test123" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 3 )
+
+[node name="ground_test124" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 3 )
+
+[node name="ground_test125" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 5 )
+
+[node name="ground_test126" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 5 )
+
+[node name="ground_test127" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 3 )
+
+[node name="ground_test128" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 3 )
+
+[node name="ground_test129" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 20 )
+
+[node name="ground_test130" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 20 )
+
+[node name="ground_test131" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 18 )
+
+[node name="ground_test132" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 18 )
+
+[node name="ground_test133" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 20 )
+
+[node name="ground_test134" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 20 )
+
+[node name="ground_test135" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 18 )
+
+[node name="ground_test136" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 18 )
+
+[node name="ground_test137" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 15 )
+
+[node name="ground_test138" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 15 )
+
+[node name="ground_test139" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 13 )
+
+[node name="ground_test140" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 13 )
+
+[node name="ground_test141" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 15 )
+
+[node name="ground_test142" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 15 )
+
+[node name="ground_test143" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 13 )
+
+[node name="ground_test144" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 13 )
+
+[node name="ground_test145" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 20 )
+
+[node name="ground_test146" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 20 )
+
+[node name="ground_test147" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 18 )
+
+[node name="ground_test148" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 18 )
+
+[node name="ground_test149" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 20 )
+
+[node name="ground_test150" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 20 )
+
+[node name="ground_test151" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 18 )
+
+[node name="ground_test152" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 18 )
+
+[node name="ground_test153" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 15 )
+
+[node name="ground_test154" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 15 )
+
+[node name="ground_test155" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 13 )
+
+[node name="ground_test156" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 13 )
+
+[node name="ground_test157" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 15 )
+
+[node name="ground_test158" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 15 )
+
+[node name="ground_test159" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 13 )
+
+[node name="ground_test160" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 13 )
+
+[node name="ground_test161" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 30 )
+
+[node name="ground_test162" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 30 )
+
+[node name="ground_test163" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 28 )
+
+[node name="ground_test164" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 28 )
+
+[node name="ground_test165" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 30 )
+
+[node name="ground_test166" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 30 )
+
+[node name="ground_test167" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 28 )
+
+[node name="ground_test168" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 28 )
+
+[node name="ground_test169" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 25 )
+
+[node name="ground_test170" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 25 )
+
+[node name="ground_test171" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 0, 23 )
+
+[node name="ground_test172" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -2, 23 )
+
+[node name="ground_test173" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 25 )
+
+[node name="ground_test174" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 25 )
+
+[node name="ground_test175" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 5, 23 )
+
+[node name="ground_test176" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( 3, 23 )
+
+[node name="ground_test177" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 30 )
+
+[node name="ground_test178" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 30 )
+
+[node name="ground_test179" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 28 )
+
+[node name="ground_test180" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 28 )
+
+[node name="ground_test181" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 30 )
+
+[node name="ground_test182" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 30 )
+
+[node name="ground_test183" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 28 )
+
+[node name="ground_test184" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 28 )
+
+[node name="ground_test185" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 25 )
+
+[node name="ground_test186" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 25 )
+
+[node name="ground_test187" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -10, 23 )
+
+[node name="ground_test188" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -12, 23 )
+
+[node name="ground_test189" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 25 )
+
+[node name="ground_test190" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 25 )
+
+[node name="ground_test191" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -5, 23 )
+
+[node name="ground_test192" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -7, 23 )
+
+[node name="ground_test193" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 20 )
+
+[node name="ground_test194" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 20 )
+
+[node name="ground_test195" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 18 )
+
+[node name="ground_test196" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 18 )
+
+[node name="ground_test197" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 20 )
+
+[node name="ground_test198" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 20 )
+
+[node name="ground_test199" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 18 )
+
+[node name="ground_test200" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 18 )
+
+[node name="ground_test201" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 15 )
+
+[node name="ground_test202" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 15 )
+
+[node name="ground_test203" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 13 )
+
+[node name="ground_test204" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 13 )
+
+[node name="ground_test205" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 15 )
+
+[node name="ground_test206" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 15 )
+
+[node name="ground_test207" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 13 )
+
+[node name="ground_test208" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 13 )
+
+[node name="ground_test209" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 20 )
+
+[node name="ground_test210" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 20 )
+
+[node name="ground_test211" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 18 )
+
+[node name="ground_test212" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 18 )
+
+[node name="ground_test213" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 20 )
+
+[node name="ground_test214" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 20 )
+
+[node name="ground_test215" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 18 )
+
+[node name="ground_test216" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 18 )
+
+[node name="ground_test217" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 15 )
+
+[node name="ground_test218" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 15 )
+
+[node name="ground_test219" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 13 )
+
+[node name="ground_test220" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 13 )
+
+[node name="ground_test221" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 15 )
+
+[node name="ground_test222" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 15 )
+
+[node name="ground_test223" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 13 )
+
+[node name="ground_test224" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 13 )
+
+[node name="ground_test225" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 30 )
+
+[node name="ground_test226" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 30 )
+
+[node name="ground_test227" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 28 )
+
+[node name="ground_test228" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 28 )
+
+[node name="ground_test229" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 30 )
+
+[node name="ground_test230" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 30 )
+
+[node name="ground_test231" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 28 )
+
+[node name="ground_test232" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 28 )
+
+[node name="ground_test233" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 25 )
+
+[node name="ground_test234" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 25 )
+
+[node name="ground_test235" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -20, 23 )
+
+[node name="ground_test236" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -22, 23 )
+
+[node name="ground_test237" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 25 )
+
+[node name="ground_test238" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 25 )
+
+[node name="ground_test239" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -15, 23 )
+
+[node name="ground_test240" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -17, 23 )
+
+[node name="ground_test241" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 30 )
+
+[node name="ground_test242" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 30 )
+
+[node name="ground_test243" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 28 )
+
+[node name="ground_test244" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 28 )
+
+[node name="ground_test245" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 30 )
+
+[node name="ground_test246" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 30 )
+
+[node name="ground_test247" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 28 )
+
+[node name="ground_test248" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 28 )
+
+[node name="ground_test249" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 25 )
+
+[node name="ground_test250" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 25 )
+
+[node name="ground_test251" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -30, 23 )
+
+[node name="ground_test252" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -32, 23 )
+
+[node name="ground_test253" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 25 )
+
+[node name="ground_test254" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 25 )
+
+[node name="ground_test255" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -25, 23 )
+
+[node name="ground_test256" parent="Gronded" instance=ExtResource( 3 )]
+position = Vector2( -27, 23 )
+
+[node name="Gronded3" type="Node2D" parent="."]
+light_mask = 2
+position = Vector2( 142, -29 )
+rotation = 0.589623
+
+[node name="ground_test" parent="Gronded3" instance=ExtResource( 3 )]
+
+[node name="ground_test2" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 0 )
+
+[node name="ground_test3" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, -2 )
+
+[node name="ground_test4" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, -2 )
+
+[node name="ground_test5" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 0 )
+
+[node name="ground_test6" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 0 )
+
+[node name="ground_test7" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, -2 )
+
+[node name="ground_test8" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, -2 )
+
+[node name="ground_test9" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, -5 )
+
+[node name="ground_test10" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, -5 )
+
+[node name="ground_test11" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, -7 )
+
+[node name="ground_test12" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, -7 )
+
+[node name="ground_test13" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, -5 )
+
+[node name="ground_test14" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, -5 )
+
+[node name="ground_test15" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, -7 )
+
+[node name="ground_test16" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, -7 )
+
+[node name="ground_test17" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 0 )
+
+[node name="ground_test18" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 0 )
+
+[node name="ground_test19" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, -2 )
+
+[node name="ground_test20" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, -2 )
+
+[node name="ground_test21" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 0 )
+
+[node name="ground_test22" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 0 )
+
+[node name="ground_test23" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, -2 )
+
+[node name="ground_test24" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, -2 )
+
+[node name="ground_test25" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, -5 )
+
+[node name="ground_test26" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, -5 )
+
+[node name="ground_test27" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, -7 )
+
+[node name="ground_test28" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, -7 )
+
+[node name="ground_test29" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, -5 )
+
+[node name="ground_test30" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, -5 )
+
+[node name="ground_test31" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, -7 )
+
+[node name="ground_test32" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, -7 )
+
+[node name="ground_test33" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 10 )
+
+[node name="ground_test34" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 10 )
+
+[node name="ground_test35" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 8 )
+
+[node name="ground_test36" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 8 )
+
+[node name="ground_test37" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 10 )
+
+[node name="ground_test38" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 10 )
+
+[node name="ground_test39" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 8 )
+
+[node name="ground_test40" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 8 )
+
+[node name="ground_test41" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 5 )
+
+[node name="ground_test42" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 5 )
+
+[node name="ground_test43" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 3 )
+
+[node name="ground_test44" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 3 )
+
+[node name="ground_test45" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 5 )
+
+[node name="ground_test46" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 5 )
+
+[node name="ground_test47" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 3 )
+
+[node name="ground_test48" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 3 )
+
+[node name="ground_test49" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 10 )
+
+[node name="ground_test50" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 10 )
+
+[node name="ground_test51" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 8 )
+
+[node name="ground_test52" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 8 )
+
+[node name="ground_test53" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 10 )
+
+[node name="ground_test54" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 10 )
+
+[node name="ground_test55" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 8 )
+
+[node name="ground_test56" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 8 )
+
+[node name="ground_test57" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 5 )
+
+[node name="ground_test58" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 5 )
+
+[node name="ground_test59" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 3 )
+
+[node name="ground_test60" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 3 )
+
+[node name="ground_test61" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 5 )
+
+[node name="ground_test62" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 5 )
+
+[node name="ground_test63" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 3 )
+
+[node name="ground_test64" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 3 )
+
+[node name="ground_test65" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 0 )
+
+[node name="ground_test66" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 0 )
+
+[node name="ground_test67" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, -2 )
+
+[node name="ground_test68" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, -2 )
+
+[node name="ground_test69" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 0 )
+
+[node name="ground_test70" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 0 )
+
+[node name="ground_test71" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, -2 )
+
+[node name="ground_test72" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, -2 )
+
+[node name="ground_test73" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, -5 )
+
+[node name="ground_test74" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, -5 )
+
+[node name="ground_test75" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, -7 )
+
+[node name="ground_test76" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, -7 )
+
+[node name="ground_test77" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, -5 )
+
+[node name="ground_test78" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, -5 )
+
+[node name="ground_test79" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, -7 )
+
+[node name="ground_test80" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, -7 )
+
+[node name="ground_test81" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 0 )
+
+[node name="ground_test82" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 0 )
+
+[node name="ground_test83" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, -2 )
+
+[node name="ground_test84" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, -2 )
+
+[node name="ground_test85" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 0 )
+
+[node name="ground_test86" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 0 )
+
+[node name="ground_test87" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, -2 )
+
+[node name="ground_test88" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, -2 )
+
+[node name="ground_test89" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, -5 )
+
+[node name="ground_test90" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, -5 )
+
+[node name="ground_test91" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, -7 )
+
+[node name="ground_test92" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, -7 )
+
+[node name="ground_test93" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, -5 )
+
+[node name="ground_test94" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, -5 )
+
+[node name="ground_test95" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, -7 )
+
+[node name="ground_test96" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, -7 )
+
+[node name="ground_test97" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 10 )
+
+[node name="ground_test98" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 10 )
+
+[node name="ground_test99" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 8 )
+
+[node name="ground_test100" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 8 )
+
+[node name="ground_test101" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 10 )
+
+[node name="ground_test102" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 10 )
+
+[node name="ground_test103" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 8 )
+
+[node name="ground_test104" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 8 )
+
+[node name="ground_test105" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 5 )
+
+[node name="ground_test106" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 5 )
+
+[node name="ground_test107" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 3 )
+
+[node name="ground_test108" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 3 )
+
+[node name="ground_test109" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 5 )
+
+[node name="ground_test110" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 5 )
+
+[node name="ground_test111" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 3 )
+
+[node name="ground_test112" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 3 )
+
+[node name="ground_test113" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 10 )
+
+[node name="ground_test114" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 10 )
+
+[node name="ground_test115" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 8 )
+
+[node name="ground_test116" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 8 )
+
+[node name="ground_test117" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 10 )
+
+[node name="ground_test118" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 10 )
+
+[node name="ground_test119" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 8 )
+
+[node name="ground_test120" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 8 )
+
+[node name="ground_test121" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 5 )
+
+[node name="ground_test122" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 5 )
+
+[node name="ground_test123" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 3 )
+
+[node name="ground_test124" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 3 )
+
+[node name="ground_test125" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 5 )
+
+[node name="ground_test126" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 5 )
+
+[node name="ground_test127" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 3 )
+
+[node name="ground_test128" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 3 )
+
+[node name="ground_test129" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 20 )
+
+[node name="ground_test130" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 20 )
+
+[node name="ground_test131" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 18 )
+
+[node name="ground_test132" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 18 )
+
+[node name="ground_test133" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 20 )
+
+[node name="ground_test134" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 20 )
+
+[node name="ground_test135" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 18 )
+
+[node name="ground_test136" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 18 )
+
+[node name="ground_test137" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 15 )
+
+[node name="ground_test138" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 15 )
+
+[node name="ground_test139" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 13 )
+
+[node name="ground_test140" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 13 )
+
+[node name="ground_test141" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 15 )
+
+[node name="ground_test142" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 15 )
+
+[node name="ground_test143" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 13 )
+
+[node name="ground_test144" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 13 )
+
+[node name="ground_test145" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 20 )
+
+[node name="ground_test146" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 20 )
+
+[node name="ground_test147" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 18 )
+
+[node name="ground_test148" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 18 )
+
+[node name="ground_test149" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 20 )
+
+[node name="ground_test150" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 20 )
+
+[node name="ground_test151" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 18 )
+
+[node name="ground_test152" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 18 )
+
+[node name="ground_test153" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 15 )
+
+[node name="ground_test154" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 15 )
+
+[node name="ground_test155" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 13 )
+
+[node name="ground_test156" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 13 )
+
+[node name="ground_test157" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 15 )
+
+[node name="ground_test158" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 15 )
+
+[node name="ground_test159" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 13 )
+
+[node name="ground_test160" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 13 )
+
+[node name="ground_test161" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 30 )
+
+[node name="ground_test162" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 30 )
+
+[node name="ground_test163" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 28 )
+
+[node name="ground_test164" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 28 )
+
+[node name="ground_test165" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 30 )
+
+[node name="ground_test166" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 30 )
+
+[node name="ground_test167" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 28 )
+
+[node name="ground_test168" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 28 )
+
+[node name="ground_test169" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 25 )
+
+[node name="ground_test170" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 25 )
+
+[node name="ground_test171" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 0, 23 )
+
+[node name="ground_test172" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -2, 23 )
+
+[node name="ground_test173" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 25 )
+
+[node name="ground_test174" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 25 )
+
+[node name="ground_test175" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 5, 23 )
+
+[node name="ground_test176" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( 3, 23 )
+
+[node name="ground_test177" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 30 )
+
+[node name="ground_test178" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 30 )
+
+[node name="ground_test179" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 28 )
+
+[node name="ground_test180" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 28 )
+
+[node name="ground_test181" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 30 )
+
+[node name="ground_test182" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 30 )
+
+[node name="ground_test183" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 28 )
+
+[node name="ground_test184" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 28 )
+
+[node name="ground_test185" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 25 )
+
+[node name="ground_test186" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 25 )
+
+[node name="ground_test187" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -10, 23 )
+
+[node name="ground_test188" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -12, 23 )
+
+[node name="ground_test189" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 25 )
+
+[node name="ground_test190" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 25 )
+
+[node name="ground_test191" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -5, 23 )
+
+[node name="ground_test192" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -7, 23 )
+
+[node name="ground_test193" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 20 )
+
+[node name="ground_test194" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 20 )
+
+[node name="ground_test195" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 18 )
+
+[node name="ground_test196" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 18 )
+
+[node name="ground_test197" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 20 )
+
+[node name="ground_test198" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 20 )
+
+[node name="ground_test199" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 18 )
+
+[node name="ground_test200" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 18 )
+
+[node name="ground_test201" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 15 )
+
+[node name="ground_test202" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 15 )
+
+[node name="ground_test203" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 13 )
+
+[node name="ground_test204" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 13 )
+
+[node name="ground_test205" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 15 )
+
+[node name="ground_test206" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 15 )
+
+[node name="ground_test207" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 13 )
+
+[node name="ground_test208" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 13 )
+
+[node name="ground_test209" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 20 )
+
+[node name="ground_test210" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 20 )
+
+[node name="ground_test211" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 18 )
+
+[node name="ground_test212" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 18 )
+
+[node name="ground_test213" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 20 )
+
+[node name="ground_test214" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 20 )
+
+[node name="ground_test215" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 18 )
+
+[node name="ground_test216" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 18 )
+
+[node name="ground_test217" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 15 )
+
+[node name="ground_test218" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 15 )
+
+[node name="ground_test219" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 13 )
+
+[node name="ground_test220" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 13 )
+
+[node name="ground_test221" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 15 )
+
+[node name="ground_test222" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 15 )
+
+[node name="ground_test223" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 13 )
+
+[node name="ground_test224" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 13 )
+
+[node name="ground_test225" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 30 )
+
+[node name="ground_test226" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 30 )
+
+[node name="ground_test227" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 28 )
+
+[node name="ground_test228" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 28 )
+
+[node name="ground_test229" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 30 )
+
+[node name="ground_test230" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 30 )
+
+[node name="ground_test231" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 28 )
+
+[node name="ground_test232" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 28 )
+
+[node name="ground_test233" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 25 )
+
+[node name="ground_test234" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 25 )
+
+[node name="ground_test235" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -20, 23 )
+
+[node name="ground_test236" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -22, 23 )
+
+[node name="ground_test237" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 25 )
+
+[node name="ground_test238" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 25 )
+
+[node name="ground_test239" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -15, 23 )
+
+[node name="ground_test240" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -17, 23 )
+
+[node name="ground_test241" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 30 )
+
+[node name="ground_test242" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 30 )
+
+[node name="ground_test243" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 28 )
+
+[node name="ground_test244" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 28 )
+
+[node name="ground_test245" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 30 )
+
+[node name="ground_test246" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 30 )
+
+[node name="ground_test247" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 28 )
+
+[node name="ground_test248" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 28 )
+
+[node name="ground_test249" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 25 )
+
+[node name="ground_test250" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 25 )
+
+[node name="ground_test251" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -30, 23 )
+
+[node name="ground_test252" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -32, 23 )
+
+[node name="ground_test253" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 25 )
+
+[node name="ground_test254" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 25 )
+
+[node name="ground_test255" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -25, 23 )
+
+[node name="ground_test256" parent="Gronded3" instance=ExtResource( 3 )]
+position = Vector2( -27, 23 )
+
+[node name="Gronded2" type="Node2D" parent="."]
+light_mask = 2
+position = Vector2( 0, -109 )
+
+[node name="ground_test" parent="Gronded2" instance=ExtResource( 3 )]
+
+[node name="ground_test2" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 0 )
+
+[node name="ground_test3" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, -2 )
+
+[node name="ground_test4" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, -2 )
+
+[node name="ground_test5" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 0 )
+
+[node name="ground_test6" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 0 )
+
+[node name="ground_test7" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, -2 )
+
+[node name="ground_test8" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, -2 )
+
+[node name="ground_test9" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, -5 )
+
+[node name="ground_test10" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, -5 )
+
+[node name="ground_test11" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, -7 )
+
+[node name="ground_test12" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, -7 )
+
+[node name="ground_test13" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, -5 )
+
+[node name="ground_test14" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, -5 )
+
+[node name="ground_test15" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, -7 )
+
+[node name="ground_test16" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, -7 )
+
+[node name="ground_test17" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 0 )
+
+[node name="ground_test18" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 0 )
+
+[node name="ground_test19" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, -2 )
+
+[node name="ground_test20" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, -2 )
+
+[node name="ground_test21" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 0 )
+
+[node name="ground_test22" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 0 )
+
+[node name="ground_test23" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, -2 )
+
+[node name="ground_test24" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, -2 )
+
+[node name="ground_test25" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, -5 )
+
+[node name="ground_test26" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, -5 )
+
+[node name="ground_test27" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, -7 )
+
+[node name="ground_test28" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, -7 )
+
+[node name="ground_test29" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, -5 )
+
+[node name="ground_test30" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, -5 )
+
+[node name="ground_test31" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, -7 )
+
+[node name="ground_test32" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, -7 )
+
+[node name="ground_test33" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 10 )
+
+[node name="ground_test34" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 10 )
+
+[node name="ground_test35" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 8 )
+
+[node name="ground_test36" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 8 )
+
+[node name="ground_test37" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 10 )
+
+[node name="ground_test38" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 10 )
+
+[node name="ground_test39" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 8 )
+
+[node name="ground_test40" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 8 )
+
+[node name="ground_test41" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 5 )
+
+[node name="ground_test42" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 5 )
+
+[node name="ground_test43" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 3 )
+
+[node name="ground_test44" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 3 )
+
+[node name="ground_test45" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 5 )
+
+[node name="ground_test46" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 5 )
+
+[node name="ground_test47" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 3 )
+
+[node name="ground_test48" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 3 )
+
+[node name="ground_test49" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 10 )
+
+[node name="ground_test50" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 10 )
+
+[node name="ground_test51" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 8 )
+
+[node name="ground_test52" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 8 )
+
+[node name="ground_test53" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 10 )
+
+[node name="ground_test54" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 10 )
+
+[node name="ground_test55" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 8 )
+
+[node name="ground_test56" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 8 )
+
+[node name="ground_test57" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 5 )
+
+[node name="ground_test58" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 5 )
+
+[node name="ground_test59" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 3 )
+
+[node name="ground_test60" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 3 )
+
+[node name="ground_test61" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 5 )
+
+[node name="ground_test62" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 5 )
+
+[node name="ground_test63" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 3 )
+
+[node name="ground_test64" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 3 )
+
+[node name="ground_test65" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 0 )
+
+[node name="ground_test66" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 0 )
+
+[node name="ground_test67" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, -2 )
+
+[node name="ground_test68" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, -2 )
+
+[node name="ground_test69" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 0 )
+
+[node name="ground_test70" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 0 )
+
+[node name="ground_test71" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, -2 )
+
+[node name="ground_test72" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, -2 )
+
+[node name="ground_test73" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, -5 )
+
+[node name="ground_test74" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, -5 )
+
+[node name="ground_test75" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, -7 )
+
+[node name="ground_test76" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, -7 )
+
+[node name="ground_test77" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, -5 )
+
+[node name="ground_test78" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, -5 )
+
+[node name="ground_test79" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, -7 )
+
+[node name="ground_test80" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, -7 )
+
+[node name="ground_test81" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 0 )
+
+[node name="ground_test82" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 0 )
+
+[node name="ground_test83" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, -2 )
+
+[node name="ground_test84" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, -2 )
+
+[node name="ground_test85" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 0 )
+
+[node name="ground_test86" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 0 )
+
+[node name="ground_test87" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, -2 )
+
+[node name="ground_test88" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, -2 )
+
+[node name="ground_test89" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, -5 )
+
+[node name="ground_test90" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, -5 )
+
+[node name="ground_test91" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, -7 )
+
+[node name="ground_test92" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, -7 )
+
+[node name="ground_test93" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, -5 )
+
+[node name="ground_test94" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, -5 )
+
+[node name="ground_test95" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, -7 )
+
+[node name="ground_test96" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, -7 )
+
+[node name="ground_test97" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 10 )
+
+[node name="ground_test98" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 10 )
+
+[node name="ground_test99" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 8 )
+
+[node name="ground_test100" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 8 )
+
+[node name="ground_test101" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 10 )
+
+[node name="ground_test102" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 10 )
+
+[node name="ground_test103" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 8 )
+
+[node name="ground_test104" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 8 )
+
+[node name="ground_test105" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 5 )
+
+[node name="ground_test106" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 5 )
+
+[node name="ground_test107" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 3 )
+
+[node name="ground_test108" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 3 )
+
+[node name="ground_test109" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 5 )
+
+[node name="ground_test110" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 5 )
+
+[node name="ground_test111" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 3 )
+
+[node name="ground_test112" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 3 )
+
+[node name="ground_test113" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 10 )
+
+[node name="ground_test114" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 10 )
+
+[node name="ground_test115" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 8 )
+
+[node name="ground_test116" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 8 )
+
+[node name="ground_test117" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 10 )
+
+[node name="ground_test118" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 10 )
+
+[node name="ground_test119" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 8 )
+
+[node name="ground_test120" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 8 )
+
+[node name="ground_test121" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 5 )
+
+[node name="ground_test122" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 5 )
+
+[node name="ground_test123" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 3 )
+
+[node name="ground_test124" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 3 )
+
+[node name="ground_test125" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 5 )
+
+[node name="ground_test126" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 5 )
+
+[node name="ground_test127" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 3 )
+
+[node name="ground_test128" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 3 )
+
+[node name="ground_test129" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 20 )
+
+[node name="ground_test130" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 20 )
+
+[node name="ground_test131" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 18 )
+
+[node name="ground_test132" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 18 )
+
+[node name="ground_test133" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 20 )
+
+[node name="ground_test134" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 20 )
+
+[node name="ground_test135" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 18 )
+
+[node name="ground_test136" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 18 )
+
+[node name="ground_test137" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 15 )
+
+[node name="ground_test138" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 15 )
+
+[node name="ground_test139" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 13 )
+
+[node name="ground_test140" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 13 )
+
+[node name="ground_test141" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 15 )
+
+[node name="ground_test142" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 15 )
+
+[node name="ground_test143" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 13 )
+
+[node name="ground_test144" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 13 )
+
+[node name="ground_test145" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 20 )
+
+[node name="ground_test146" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 20 )
+
+[node name="ground_test147" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 18 )
+
+[node name="ground_test148" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 18 )
+
+[node name="ground_test149" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 20 )
+
+[node name="ground_test150" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 20 )
+
+[node name="ground_test151" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 18 )
+
+[node name="ground_test152" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 18 )
+
+[node name="ground_test153" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 15 )
+
+[node name="ground_test154" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 15 )
+
+[node name="ground_test155" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 13 )
+
+[node name="ground_test156" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 13 )
+
+[node name="ground_test157" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 15 )
+
+[node name="ground_test158" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 15 )
+
+[node name="ground_test159" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 13 )
+
+[node name="ground_test160" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 13 )
+
+[node name="ground_test161" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 30 )
+
+[node name="ground_test162" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 30 )
+
+[node name="ground_test163" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 28 )
+
+[node name="ground_test164" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 28 )
+
+[node name="ground_test165" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 30 )
+
+[node name="ground_test166" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 30 )
+
+[node name="ground_test167" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 28 )
+
+[node name="ground_test168" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 28 )
+
+[node name="ground_test169" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 25 )
+
+[node name="ground_test170" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 25 )
+
+[node name="ground_test171" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 0, 23 )
+
+[node name="ground_test172" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -2, 23 )
+
+[node name="ground_test173" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 25 )
+
+[node name="ground_test174" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 25 )
+
+[node name="ground_test175" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 5, 23 )
+
+[node name="ground_test176" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( 3, 23 )
+
+[node name="ground_test177" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 30 )
+
+[node name="ground_test178" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 30 )
+
+[node name="ground_test179" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 28 )
+
+[node name="ground_test180" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 28 )
+
+[node name="ground_test181" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 30 )
+
+[node name="ground_test182" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 30 )
+
+[node name="ground_test183" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 28 )
+
+[node name="ground_test184" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 28 )
+
+[node name="ground_test185" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 25 )
+
+[node name="ground_test186" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 25 )
+
+[node name="ground_test187" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -10, 23 )
+
+[node name="ground_test188" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -12, 23 )
+
+[node name="ground_test189" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 25 )
+
+[node name="ground_test190" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 25 )
+
+[node name="ground_test191" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -5, 23 )
+
+[node name="ground_test192" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -7, 23 )
+
+[node name="ground_test193" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 20 )
+
+[node name="ground_test194" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 20 )
+
+[node name="ground_test195" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 18 )
+
+[node name="ground_test196" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 18 )
+
+[node name="ground_test197" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 20 )
+
+[node name="ground_test198" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 20 )
+
+[node name="ground_test199" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 18 )
+
+[node name="ground_test200" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 18 )
+
+[node name="ground_test201" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 15 )
+
+[node name="ground_test202" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 15 )
+
+[node name="ground_test203" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 13 )
+
+[node name="ground_test204" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 13 )
+
+[node name="ground_test205" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 15 )
+
+[node name="ground_test206" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 15 )
+
+[node name="ground_test207" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 13 )
+
+[node name="ground_test208" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 13 )
+
+[node name="ground_test209" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 20 )
+
+[node name="ground_test210" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 20 )
+
+[node name="ground_test211" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 18 )
+
+[node name="ground_test212" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 18 )
+
+[node name="ground_test213" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 20 )
+
+[node name="ground_test214" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 20 )
+
+[node name="ground_test215" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 18 )
+
+[node name="ground_test216" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 18 )
+
+[node name="ground_test217" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 15 )
+
+[node name="ground_test218" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 15 )
+
+[node name="ground_test219" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 13 )
+
+[node name="ground_test220" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 13 )
+
+[node name="ground_test221" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 15 )
+
+[node name="ground_test222" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 15 )
+
+[node name="ground_test223" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 13 )
+
+[node name="ground_test224" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 13 )
+
+[node name="ground_test225" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 30 )
+
+[node name="ground_test226" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 30 )
+
+[node name="ground_test227" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 28 )
+
+[node name="ground_test228" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 28 )
+
+[node name="ground_test229" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 30 )
+
+[node name="ground_test230" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 30 )
+
+[node name="ground_test231" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 28 )
+
+[node name="ground_test232" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 28 )
+
+[node name="ground_test233" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 25 )
+
+[node name="ground_test234" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 25 )
+
+[node name="ground_test235" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -20, 23 )
+
+[node name="ground_test236" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -22, 23 )
+
+[node name="ground_test237" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 25 )
+
+[node name="ground_test238" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 25 )
+
+[node name="ground_test239" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -15, 23 )
+
+[node name="ground_test240" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -17, 23 )
+
+[node name="ground_test241" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 30 )
+
+[node name="ground_test242" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 30 )
+
+[node name="ground_test243" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 28 )
+
+[node name="ground_test244" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 28 )
+
+[node name="ground_test245" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 30 )
+
+[node name="ground_test246" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 30 )
+
+[node name="ground_test247" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 28 )
+
+[node name="ground_test248" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 28 )
+
+[node name="ground_test249" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 25 )
+
+[node name="ground_test250" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 25 )
+
+[node name="ground_test251" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -30, 23 )
+
+[node name="ground_test252" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -32, 23 )
+
+[node name="ground_test253" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 25 )
+
+[node name="ground_test254" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 25 )
+
+[node name="ground_test255" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -25, 23 )
+
+[node name="ground_test256" parent="Gronded2" instance=ExtResource( 3 )]
+position = Vector2( -27, 23 )

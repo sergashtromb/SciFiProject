@@ -1,115 +1,38 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Graphics/Tests/charge.png" type="Texture" id=1]
 [ext_resource path="res://Graphics/Tests/move with FX.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Tests/move without FX.png" type="Texture" id=3]
 
+[sub_resource type="PhysicsMaterial" id=25]
+friction = 0.5
+
 [sub_resource type="GDScript" id=7]
-script/source = "extends KinematicBody2D
+script/source = "extends RigidBody2D
 
 
-enum Animations {
-	IDLE,
-	WALK,
-	RUN
-}
 
-enum Direction {
-	LEFT,
-	RIGHT,
-	UP,
-	DOWN
-}
+var speed = 180
 
-var Speed = 120
-export(float) var Gravity = 9.8
-export(float) var Jump = 0
-
-var move = Vector2.ZERO
-
-var anim = null
-
-var current_anim = Animations.IDLE
-var dir = Direction.RIGHT
-
-func _ready():
-	anim = $Animation
+func _integrate_forces(state):
 	
-
-func _physics_process(delta):
-	
-	_move();
-	print(current_anim)
-	determine_position_and_animation_sprite(current_anim, dir, anim)
-	
-	move = move_and_slide(move, Vector2.UP, false, 4, 0.78, false)
+	state.linear_velocity = _move()
 	
 	
+
 func _move():
-	
-	move.y += Gravity
-	
-	if Input.is_action_pressed(\"left\"):
-		move.x = -Speed
-		anim.flip_h = true
-		
-		current_anim = Animations.WALK
-		dir = Direction.LEFT
-		
-	elif Input.is_action_pressed(\"right\"):
-		move.x = Speed
-		anim.flip_h = false
-		
-		current_anim = Animations.WALK
-		dir = Direction.RIGHT
-		
+
+	var vel = Vector2(0, 0)
+
+	if Input.is_action_pressed(\"right\"):
+		vel.x = speed
+	elif Input.is_action_pressed(\"left\"):
+		vel.x = -speed
 	else:
-		move.x = 0;
-		current_anim = Animations.IDLE
-		
-		
-	if is_on_floor():
-		
-		if Input.is_action_just_pressed(\"jump\"):
-			move.y = -Jump
-		elif Input.is_action_pressed(\"run\"):
-			current_anim = Animations.RUN
-			Speed = 180
-			
-	if Input.is_action_just_released(\"run\"):
-		Speed = 120 
-
-func determine_position_and_animation_sprite(cur_anim, cur_dir, sprite):
+		vel.x = 0
 	
-	if cur_anim == Animations.IDLE:
-		
-		sprite.play('Idle')
-		
-		if cur_dir == Direction.RIGHT:
-			sprite.position.x = 6.5
-		elif cur_dir == Direction.LEFT:
-			sprite.position.x = -6.5
-			
-	elif cur_anim == Animations.RUN:
-		
-		sprite.play('Run')
-		
-		if cur_dir == Direction.RIGHT:
-			sprite.position.x = -4
-		elif cur_dir == Direction.LEFT:
-			sprite.position.x = 4
+	return vel
 	
-	elif cur_anim == Animations.WALK:
-		
-		sprite.play('Walk')
-		
-		if cur_dir == Direction.RIGHT:
-			sprite.position.x = 5.5
-		elif cur_dir == Direction.LEFT:
-			sprite.position.x = -5.5
-	
-
-
 
 
 
@@ -123,8 +46,9 @@ func determine_position_and_animation_sprite(cur_anim, cur_dir, sprite):
 
 "
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.5, 11 )
+[sub_resource type="CapsuleShape2D" id=24]
+radius = 7.0
+height = 8.0
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -224,17 +148,21 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="RigidBody2D"]
+mode = 2
+physics_material_override = SubResource( 25 )
+contacts_reported = 1
+contact_monitor = true
 script = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
-shape = SubResource( 1 )
+position = Vector2( 1, 1 )
+shape = SubResource( 24 )
 
 [node name="Animation" type="AnimatedSprite" parent="."]
 position = Vector2( -5.5, 0 )
 frames = SubResource( 6 )
-animation = "Walk"
+animation = "Idle"
 frame = 2
 playing = true
 flip_h = true
