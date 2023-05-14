@@ -7,7 +7,6 @@
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 36 )
-Speed = 120.0
 Gravity = 25.0
 Jump = 450.0
 

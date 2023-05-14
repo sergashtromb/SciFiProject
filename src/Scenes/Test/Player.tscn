@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Graphics/Tests/charge.png" type="Texture" id=1]
 [ext_resource path="res://Graphics/Tests/move with FX.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Tests/move without FX.png" type="Texture" id=3]
 
 [sub_resource type="GDScript" id=7]
 script/source = "extends KinematicBody2D
@@ -9,7 +10,8 @@ script/source = "extends KinematicBody2D
 
 enum Animations {
 	IDLE,
-	WALK
+	WALK,
+	RUN
 }
 
 enum Direction {
@@ -19,7 +21,7 @@ enum Direction {
 	DOWN
 }
 
-export(float) var Speed = 0
+var Speed = 120
 export(float) var Gravity = 9.8
 export(float) var Jump = 0
 
@@ -36,9 +38,9 @@ func _ready():
 
 func _physics_process(delta):
 	
-	determine_position_and_animation_sprite(current_anim, dir, anim)
-	
 	_move();
+	print(current_anim)
+	determine_position_and_animation_sprite(current_anim, dir, anim)
 	
 	move = move_and_slide(move, Vector2.UP, false, 4, 0.78, false)
 	
@@ -65,8 +67,17 @@ func _move():
 		move.x = 0;
 		current_anim = Animations.IDLE
 		
-	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
-		move.y = -Jump
+		
+	if is_on_floor():
+		
+		if Input.is_action_just_pressed(\"jump\"):
+			move.y = -Jump
+		elif Input.is_action_pressed(\"run\"):
+			current_anim = Animations.RUN
+			Speed = 180
+			
+	if Input.is_action_just_released(\"run\"):
+		Speed = 120 
 
 func determine_position_and_animation_sprite(cur_anim, cur_dir, sprite):
 	
@@ -79,15 +90,24 @@ func determine_position_and_animation_sprite(cur_anim, cur_dir, sprite):
 		elif cur_dir == Direction.LEFT:
 			sprite.position.x = -6.5
 			
-	elif cur_anim == Animations.WALK:
+	elif cur_anim == Animations.RUN:
 		
-		sprite.play('Walk')
+		sprite.play('Run')
 		
 		if cur_dir == Direction.RIGHT:
 			sprite.position.x = -4
 		elif cur_dir == Direction.LEFT:
 			sprite.position.x = 4
+	
+	elif cur_anim == Animations.WALK:
 		
+		sprite.play('Walk')
+		
+		if cur_dir == Direction.RIGHT:
+			sprite.position.x = 5.5
+		elif cur_dir == Direction.LEFT:
+			sprite.position.x = -5.5
+	
 
 
 
@@ -154,6 +174,38 @@ region = Rect2( 0, 156, 39, 26 )
 atlas = ExtResource( 2 )
 region = Rect2( 0, 182, 39, 26 )
 
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 58, 26 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 26, 58, 26 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 52, 58, 26 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 78, 58, 26 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 104, 58, 26 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 130, 58, 26 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 156, 58, 26 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 182, 58, 26 )
+
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
@@ -163,8 +215,13 @@ animations = [ {
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
-"name": "Walk",
+"name": "Run",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -175,10 +232,10 @@ position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="Animation" type="AnimatedSprite" parent="."]
-position = Vector2( 4, 0 )
+position = Vector2( -5.5, 0 )
 frames = SubResource( 6 )
 animation = "Walk"
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 
