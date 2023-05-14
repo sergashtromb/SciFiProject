@@ -13,6 +13,11 @@ config_version=4
 config/name="Src"
 config/icon="res://icon.png"
 
+[autoload]
+
+Memory="*res://Scripts/Globals/Memory.gd"
+WorkNode="*res://Scripts/Globals/WorkNode.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
